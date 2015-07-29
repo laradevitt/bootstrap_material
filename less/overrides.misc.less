@@ -1,0 +1,200 @@
+@primary: @teal;
+@primary-100: @teal-100;
+@primary-200: @teal-200;
+@primary-300: @teal-300;
+@primary-400: @teal-400;
+@primary-500: @teal-500;
+@primary-600: @teal-600;
+@primary-700: @teal-700;
+@primary-800: @teal-800;
+@primary-900: @teal-900;
+
+/**
+ * Navigation
+ */
+
+.admin .breadcrumb {
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 56px;
+  margin-bottom: 0;
+  a, .active {
+    color: #FFFFFF;
+  }
+  li + li:before {
+    background: no-repeat url("//material-design.storage.googleapis.com/images/separator.svg") right center;
+    background-size: contain;
+    content: '';
+    float: left;
+    height: 56px;
+    margin: 0 .3em 0 .4em;
+    width: .4em;
+  }
+}
+
+.tabs--primary {
+  background: transparent;
+  border-bottom: none;
+  margin: 10px 0 20px;
+  li {
+    a, a:hover, a:focus {
+      font-size: 20px;
+      color: @lightbg-text !important;
+      font-weight: normal;
+      border: 1px solid @grey-300;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    a.active {
+      color: @primary !important;
+    }
+  }
+  li.active {
+    border-left: 5px solid;
+    border-left-color: @primary-100;
+  }
+}
+
+.tabs--secondary {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  li {
+    display: inline-block;
+    margin-right: 12px;
+    a {
+      font-size: 16px;
+    }
+  }
+}
+
+
+/**
+ * Pagination
+ * See issue: https://github.com/FezVrasta/bootstrap-material-design/issues/437
+ */
+
+.pagination {
+  text-align: center;
+  padding: 0;
+  li {
+    display: inline-block;
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+    a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+    }
+    span {
+      margin: 5px;
+      display: inline-block;
+      text-align: center;
+      line-height: 30px;
+    }
+  }
+  li:first-child i, li:last-child i {
+    margin: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: @primary;
+  }
+  li.active {
+    background: @grey-600;
+    a {
+      color: #FFFFFF;
+    }
+  }
+  li > a {
+    text-decoration: none;
+    color: @primary-600;
+  }
+  li > a:active {
+    color: @primary;
+  }
+  li > a:after {
+    content: "";
+    transform: scale(0.2);
+    -webkit-transform: scale(0.2);
+    -ms-transform: scale(0.2);
+    opacity: 0.2;
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    border-radius: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    transition: transform 0s ease-out 0.2s, opacity 0.2s ease-out 0s;
+    -webkit-transition: -webkit-transform 0s ease-out 0.2s, opacity 0.2s ease-out 0s;
+  }
+  li > a:active:after {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    opacity: 1;
+    transition: transform 0.2s ease-out, opacity 0.3s ease-out 0.1s;
+    -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.3s ease-out 0.1s;
+  }
+  li.prev, li.next {
+    width: auto;
+    border-radius: 0;
+  }
+  li.prev a, li.next a {
+    width: auto;
+  }
+  li.prev a:after, li.next a:after,
+  li.prev > a:active:after, li.next > a:active:after {
+    transform: none;
+    opacity: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+  }
+}
+
+/**
+ * Forms
+ */
+
+.checkbox-material:after {
+  content: "\0000a0\0000a0";
+}
+
+.form-textarea-wrapper {
+  margin: 10px 0;
+}
+
+/**
+ * Text
+ */
+ 
+.region-content {
+  font-size: 16px;
+}
+
+/**
+ * Misc overrides.
+ */
+ 
+.krumo-root {
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .admin .breadcrumb {
+    font-size: 24px;
+    line-height: 64px;
+    width: 100%;
+  }
+  .admin .breadcrumb > li + li:before {
+    height: 64px;
+    margin: 0 .7em 0 .8em;
+  }
+}
+

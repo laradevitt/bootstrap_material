@@ -1,0 +1,66 @@
+/**
+ * Styles to override bootstrap CSS.
+ */
+
+/**
+ * Navigation
+ */
+
+#navbar .breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+/**
+ * Pagination
+ */
+
+.pagination {
+  li {
+    a, span {
+      float: none;
+      border: 0;
+      background-color: transparent;
+      color: @primary;
+      margin: 0;
+      padding: 0;
+    }
+    a:hover, span:hover, a:focus, span:focus {
+      color: @lightbg-text;
+    }
+  }
+  li.active {
+    a, span, a:hover, span:hover, a:focus, span:focus {
+      color: @darkbg-text;
+      background-color: transparent;
+    }
+  }
+  li:first-child {
+    a, span {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    span {
+      margin-left: 5px;
+    }
+  }
+  li:last-child {
+    a, span {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+/**
+ * Vertical tabs
+ */
+ 
+.tabs-below > .nav-tabs .summary, .tabs-left > .nav-tabs .summary, .tabs-right > .nav-tabs .summary {
+  color: @darkbg-text;
+}
+
+.tabs-left > .tab-content, .tabs-right > .tab-content {
+  background-color: #FFFFFF;
+}
