@@ -32,4 +32,3 @@ If you have [Node.js](https://nodejs.org/) installed, customizing this subtheme 
 
     `grunt`
 
-You can also just grab the less/ folder and compile it manually.
