@@ -21,18 +21,22 @@ module.exports = function(grunt) {
         ext: '.min.css'
       }
     },
+    concat: {
+      dist: {
+        src: ['bower_components/bootstrap-material-design/dist/js/ripples.min.js', 'bower_components/bootstrap-material-design/dist/js/material.min.js'],
+        dest: 'js/bootstrap_material.js'
+      }
+    },
     watch: {
       grunt: {
         options: {
           reload: true
         },
         files: ['Gruntfile.js']
-      }
-    },
-    concat: {
-      dist: {
-        src: ['bower_components/bootstrap-material-design/dist/js/ripples.min.js', 'bower_components/bootstrap-material-design/dist/js/material.min.js'],
-        dest: 'js/bootstrap_material.js'
+      },
+      css: {
+        files: 'less/**/*.less',
+        tasks: ['less', 'cssmin']
       }
     }
   });
@@ -43,5 +47,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   
   grunt.registerTask('build', ['less', 'concat', 'cssmin']);
-  grunt.registerTask('default', ['build', 'watch']);
+  grunt.registerTask('default', ['less', 'cssmin', 'watch']);
 }
