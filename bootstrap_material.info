@@ -23,6 +23,4 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = bootstrap_material_design/css/roboto.min.css
 stylesheets[all][] = css/bootstrap_material.css
-stylesheets[all][] = bootstrap_material_design/css/ripples.min.css

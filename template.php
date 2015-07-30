@@ -17,7 +17,7 @@ function bootstrap_material_preprocess_html(&$vars) {
   if (path_is_admin(current_path())) {
     $vars['classes_array'][] = 'admin';
   }
-  // Prepare to intiialize.
+  // Prepare to initialize.
   drupal_add_js('(function ($){ $.material.init(); })(jQuery);', array(
     'type' => 'inline', 
     'group' => JS_BOOTSTRAP_MATERIAL, 
@@ -29,33 +29,24 @@ function bootstrap_material_preprocess_html(&$vars) {
 /**
  * Implements hook_js_alter().
  *
- * Make sure the MDB library files load last, then initialize.
+ * Make sure the library files provided by MDB load last, then initialize.
  *
  * @see bootstrap_material_preprocess_html()
  */
 function bootstrap_material_js_alter(&$js) { 
   
-  $weight = 0;
+  $file = path_to_theme() . '/js/bootstrap_material.js';
   
-  $files = array(
-    'ripples.min.js',
-    'material.js',
-  );
-  
-  foreach ($files as $file) {
-    $filename = path_to_theme() . '/bootstrap_material_design/js/' . $file;
-    $js[$filename] = drupal_js_defaults($filename);
-    $js[$filename]['group'] = JS_BOOTSTRAP_MATERIAL;
-    $js[$filename]['scope'] = 'footer';
-    $js[$filename]['weight'] = $weight;
-    $weight++;
-  }
+  $js[$file] = drupal_js_defaults($file);
+  $js[$file]['group'] = JS_BOOTSTRAP_MATERIAL;
+  $js[$file]['scope'] = 'footer';
+  $js[$file]['weight'] = $weight = 0;
   
   // Ensure we initialize only after files are loaded.
   foreach ($js as $key => $val) {
     if (is_int($key) && $val['group'] == JS_BOOTSTRAP_MATERIAL) {
-      $js[$key]['weight'] = $weight;
       $weight++;
+      $js[$key]['weight'] = $weight;
     }
   }
 }

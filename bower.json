@@ -1,0 +1,6 @@
+{
+  "name": "drupal-bootstrap-material-theme",
+  "dependencies": {
+    "bootstrap-material-design": ">=0.3.0"
+  }
+}
