@@ -2,25 +2,27 @@
 
 A [Bootstrap](https://www.drupal.org/project/bootstrap) subtheme that brings the [Material Design guidelines by Google](http://www.google.com/design/spec/material-design/introduction.html) into Drupal. Uses Fez Vrasta's [Material Design for Bootstrap](https://fezvrasta.github.io/bootstrap-material-design) theme.
 
-## Set-up
-
-[Node.js](https://nodejs.org/), Grunt and Bower are required to manage CSS and JavaScript assets. 
+## Install
 
 1. Clone this project into your Drupal installation's themes directory.
 
-2. Go to the project folder: 
+## Customize 
+
+[Node.js](https://nodejs.org/), Grunt and Bower are required to manage CSS and JavaScript assets. 
+
+1. Go to the project folder: 
 
     `cd bootstrap_material`
 
-3. Install dependencies: 
+2. Install dependencies: 
 
     `npm install`
 
-4. Initial set-up: 
+3. Initial set-up: 
 
     `grunt build`
 
-5. To watch for changes: 
+4. To watch for changes: 
 
     `grunt`
 
