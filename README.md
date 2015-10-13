@@ -10,7 +10,9 @@ A [Bootstrap](https://www.drupal.org/project/bootstrap) subtheme that brings the
 
 ## Customize 
 
-I use [Node.js](https://nodejs.org/), Grunt and Bower to manage CSS and JavaScript assets. You can, too, but it requires [this patch](https://www.drupal.org/files/issues/malformed_theme_info-619542-146.patch) to prevent the node_modules and bower_components directories from being scanned by Drupal. Otherwise it will crash hard.
+I use [Node.js](https://nodejs.org/), Grunt and Bower to manage CSS and JavaScript assets. You can, too, but it requires [this patch](https://www.drupal.org/node/619542#comment-9771891)* to prevent the node_modules and bower_components directories from being scanned by Drupal. Otherwise it will crash hard.
+
+**Update: patch was committed on 2015-10-11 so should be in version 7.40.* 
 
 1. Clone this project into your Drupal installation's themes directory.
 
